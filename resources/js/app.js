@@ -26,7 +26,8 @@ import vuetify from './plugins/vuetify';
 import router from './plugins/route';
 import VueRouter from 'vue-router';
 
-Vue.component('navigation-drawer', require('./components/navs/NavigationDrawer.vue').default);
+Vue.component('navigation-drawer', require('./components/layout/NavigationDrawer.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
