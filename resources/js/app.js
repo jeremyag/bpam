@@ -27,6 +27,7 @@ import router from './plugins/route';
 import VueRouter from 'vue-router';
 
 Vue.component('navigation-drawer', require('./components/layout/NavigationDrawer.vue').default);
+Vue.component('bpam-app-bar', require('./components/layout/AppBar.vue').default);
 
 
 /**

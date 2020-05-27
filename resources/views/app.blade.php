@@ -9,6 +9,7 @@
 <body>
   <div id="app">
     <v-app>
+      <bpam-app-bar></bpam-app-bar>
       <navigation-drawer></navigation-drawer>
     </v-app>
   </div>
