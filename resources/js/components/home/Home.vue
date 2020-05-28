@@ -1,5 +1,8 @@
 <template>
-    <div>
-        asdfasdfasdf
-    </div>
+    <v-content
+        app>
+        <v-container>
+            This is the Home
+        </v-container>    
+    </v-content>
 </template>

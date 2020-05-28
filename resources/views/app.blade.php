@@ -9,8 +9,13 @@
 <body>
   <div id="app">
     <v-app>
+      <!-- App Bar -->
       <bpam-app-bar></bpam-app-bar>
+      <!-- Navigation Drawer -->
       <navigation-drawer></navigation-drawer>
+      <!-- Content -->
+      <router-view></router-view>
+      <!-- Footer -->
       <bpam-footer></bpam-footer>
     </v-app>
   </div>
