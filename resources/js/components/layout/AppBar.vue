@@ -1,6 +1,7 @@
 <template>
     <v-app-bar 
         flat
+        absolute
         app>
         <v-toolbar-title>BPAM <small>v1.0</small></v-toolbar-title>
         <v-spacer></v-spacer>

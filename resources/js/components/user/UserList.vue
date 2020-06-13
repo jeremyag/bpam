@@ -17,7 +17,8 @@
                     <v-btn
                         color="primary"
                         dark
-                        class="mb-2">
+                        class="mb-2"
+                        :to="'/user/new'">
                         New User
                     </v-btn>
                 </v-toolbar>

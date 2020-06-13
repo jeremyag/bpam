@@ -4,9 +4,9 @@
         color="#0747a6"
         :mini-variant.sync="mini"
         permanent
-        absolute
         dark
         app
+        fixed
     >
         <v-list-item class="px-2">
             <v-list-item-avatar>
@@ -71,7 +71,7 @@
             </v-list-item-group>
             <v-subheader inset>Administration</v-subheader>
             <v-list-item-group>
-                <v-list-item link :to="'/user'">
+                <v-list-item link :to="'/users'">
                     <v-list-item-icon>
                         <v-icon>supervised_user_circle</v-icon>
                     </v-list-item-icon>
