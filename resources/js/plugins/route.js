@@ -10,7 +10,7 @@ const options = {
     routes: [
         {path: '/login', component: Login},
         {path: '/home', component: Home},
-        {path: '/users', component: UserList}
+        {path: '/user', component: UserList}
     ]
 };
 export default new VueRouter(options);
