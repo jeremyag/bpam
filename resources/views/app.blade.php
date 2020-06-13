@@ -11,6 +11,9 @@
     <v-app>
       <bpam-app-bar></bpam-app-bar>
       <navigation-drawer></navigation-drawer>
+      <v-content>
+        <router-view></router-view>
+      </v-content>
     </v-app>
   </div>
   <script src="{{asset('js/app.js')}}"></script>
