@@ -16,22 +16,6 @@
                     </template>
                     <v-list>
                         <v-list-item
-                        v-if="editmode"
-                        link>
-                            <v-list-item-icon>
-                                <v-icon color="green">visibility</v-icon>
-                            </v-list-item-icon>
-                            <v-list-item-title>View</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item
-                        v-else
-                        link>
-                            <v-list-item-icon>
-                                <v-icon color="grey">edit</v-icon>
-                            </v-list-item-icon>
-                            <v-list-item-title>Edit</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item
                         link>
                             <v-list-item-icon>
                                 <v-icon color="red">delete</v-icon>
@@ -76,7 +60,7 @@
                                 v-model="permission.module_id"
                                 outlined
                                 required
-                                :disabled="readonly"
+                                :disabled="permission.id ? true : false"
                             ></v-select>
                         </v-col>
                     </v-row>
@@ -95,16 +79,16 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <v-switch v-model="permission.create"></v-switch>
+                                                <v-switch v-model="permission.create" :disabled="readonly"></v-switch>
                                             </td>
                                             <td>
-                                                <v-switch v-model="permission.read"></v-switch>
+                                                <v-switch v-model="permission.read" :disabled="readonly"></v-switch>
                                             </td>
                                             <td>
-                                                <v-switch v-model="permission.update"></v-switch>
+                                                <v-switch v-model="permission.update" :disabled="readonly"></v-switch>
                                             </td>
                                             <td>
-                                                <v-switch v-model="permission.delete"></v-switch>
+                                                <v-switch v-model="permission.delete" :disabled="readonly"></v-switch>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -114,12 +98,13 @@
                     </v-row>
                 </v-form>
             </v-card-text>
-            <v-card-actions v-if="!readonly">
+            <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="red darken-1" text
                     @click="cancel">Cancel</v-btn>
                 <v-btn color="blue darken-1" text
-                    @click="validate">Save</v-btn>
+                    @click="validate"
+                    v-if="!readonly">Save</v-btn>
             </v-card-actions>
         </v-card>
     </div>
@@ -132,7 +117,7 @@ export default {
             permission: {
                 id: 1,
                 role_id: 1,
-                module_id: "",
+                module_id: 1,
                 create: false,
                 read: false,
                 update: false,

@@ -25,12 +25,26 @@
             </v-toolbar>
         </template>
         <template v-slot:item.actions="{item}">
-            <v-btn icon color="grey" v-if="allowEditAction">
-                <v-icon>edit</v-icon>
-            </v-btn>
-            <v-btn icon color="green">
-                <v-icon>visibility</v-icon>
-            </v-btn>
+            <v-dialog v-model="editDialog" persistent max-width="600px">
+                <template v-slot:activator="{on, attrs}">
+                    <v-btn icon color="grey" v-if="allowEditAction"
+                        v-bind="attrs"
+                        v-on="on">
+                        <v-icon>edit</v-icon>
+                    </v-btn>
+                </template>
+                <bpam-permission-form :title="'Permission Edit'" :close="false" @closeDialog="editDialog = !editDialog"></bpam-permission-form>
+            </v-dialog>
+            <v-dialog v-model="readDialog" persistent max-width="600px">
+                <template v-slot:activator="{on, attrs}">
+                    <v-btn icon color="green"
+                        v-bind="attrs"
+                        v-on="on">
+                        <v-icon>visibility</v-icon>
+                    </v-btn>
+                </template>
+                <bpam-permission-form :title="'Permission'" :close="false" @closeDialog="readDialog = !readDialog" readonly></bpam-permission-form>
+            </v-dialog>
         </template>
     </v-data-table>
 </template>
@@ -65,7 +79,9 @@ export default {
                     delete: true,
                 }
             ],
-            dialog: false
+            dialog: false,
+            editDialog: false,
+            readDialog: false
         }
     },
     props: {
