@@ -24,10 +24,10 @@
                 </v-toolbar>
             </template>
             <template v-slot:item.actions="{item}">
-                <v-btn icon color="grey" :to="'/user/1/edit'">
+                <v-btn icon color="grey" :to="'/role/1/edit'">
                     <v-icon>edit</v-icon>
                 </v-btn>
-                <v-btn icon color="green" :to="'/user/1'">
+                <v-btn icon color="green" :to="'/role/1'">
                     <v-icon>visibility</v-icon>
                 </v-btn>
             </template>

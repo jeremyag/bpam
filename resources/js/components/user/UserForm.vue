@@ -174,7 +174,6 @@ export default {
                 role: ""
             },
             valid: true,
-            title: "User Registration",
             rules: {
                 requiredRules: [
                     v => !!v || 'Required',

@@ -21,6 +21,7 @@ import UserEdit from '../components/user/UserEdit.vue';
 import RoleList from '../components/roles/RoleList.vue';
 import Role from '../components/roles/Role.vue';
 import RoleCreate from '../components/roles/RoleCreate.vue';
+import RoleRead from '../components/roles/RoleRead.vue';
 
 const options = {
     routes: [
@@ -37,7 +38,8 @@ const options = {
         {path: '/roles', component: RoleList},
         {path: '/role', component: Role,
             children: [
-                {path: 'new', component: RoleCreate}
+                {path: 'new', component: RoleCreate},
+                {path: ':id', component: RoleRead}
             ]
         }
     ]
