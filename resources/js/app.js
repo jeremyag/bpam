@@ -32,6 +32,7 @@ Vue.component('bpam-app-bar', require('./components/layout/AppBar.vue').default)
 
 Vue.component('bpam-user-form', require('./components/user/UserForm.vue').default);
 Vue.component('bpam-role-form', require('./components/roles/RoleForm.vue').default);
+Vue.component('bpam-module-form', require('./components/module/ModuleForm.vue').default);
 
 
 /**

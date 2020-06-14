@@ -28,6 +28,10 @@ import RoleEdit from '../components/roles/RoleEdit.vue';
  * Modules Module
  */
 import ModuleList from '../components/module/ModuleList.vue';
+import Module from '../components/module/Module.vue';
+import ModuleCreate from '../components/module/ModuleCreate.vue';
+import ModuleRead from '../components/module/ModuleRead.vue';
+import ModuleEdit from '../components/module/ModuleEdit.vue';
 
 const options = {
     routes: [
@@ -50,6 +54,13 @@ const options = {
             ]
         },
         {path: '/modules', component: ModuleList},
+        {path: '/module', component: Module,
+            children: [
+                {path: 'new', component: ModuleCreate},
+                {path: ':id', component: ModuleRead},
+                {path: ':id/edit', component: ModuleEdit}
+            ]    
+        }
     ]
 };
 export default new VueRouter(options);
