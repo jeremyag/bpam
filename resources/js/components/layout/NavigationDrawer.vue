@@ -83,11 +83,11 @@
                     </v-list-item-icon>
                     <v-list-item-title>Roles</v-list-item-title>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link :to="'/modules'">
                     <v-list-item-icon>
-                        <v-icon>how_to_reg</v-icon>
+                        <v-icon>view_module</v-icon>
                     </v-list-item-icon>
-                    <v-list-item-title>Permissions</v-list-item-title>
+                    <v-list-item-title>Modules</v-list-item-title>
                 </v-list-item>
             </v-list-item-group>
         </v-list>
