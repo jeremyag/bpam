@@ -12,6 +12,7 @@ import Home from '../components/home/Home.vue';
 import UserList from '../components/user/UserList.vue';
 import User from '../components/user/User.vue';
 import UserCreate from '../components/user/UserCreate.vue';
+import UserRead from '../components/user/UserRead.vue';
 
 const options = {
     routes: [
@@ -20,9 +21,11 @@ const options = {
         {path: '/users', component: UserList},
         {path: '/user', component: User,
             children: [
-                {path: 'new', component: UserCreate}
+                {path: 'new', component: UserCreate},
+                {path: ':id', component: UserRead},
+                {path: ':id/edit', component: UserRead}
             ]
-        }
+        },
     ]
 };
 export default new VueRouter(options);
