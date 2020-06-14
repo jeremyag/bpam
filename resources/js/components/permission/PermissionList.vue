@@ -7,14 +7,21 @@
             <v-toolbar flat color="white">
                 <v-toolbar-title>Permissions</v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-btn
-                    v-if="allowNewAction"
-                    color="primary"
-                    dark
-                    class="mb-2"
-                    >
-                    New Permission
-                </v-btn>
+                <v-dialog v-model="dialog" persistent max-width="600px">
+                    <template v-slot:activator="{on, attrs}">
+                         <v-btn
+                            v-if="allowNewAction"
+                            color="primary"
+                            dark
+                            class="mb-2"
+                            v-bind="attrs"
+                            v-on="on"
+                            >
+                            New Permission
+                        </v-btn>
+                    </template>
+                    <bpam-permission-form :title="'New Permission'" :close="false" @closeDialog="dialog = !dialog"></bpam-permission-form>
+                </v-dialog>
             </v-toolbar>
         </template>
         <template v-slot:item.actions="{item}">
@@ -29,6 +36,7 @@
 </template>
 
 <script>
+import bpamPermissionForm from '../permission/PermissionForm';
 export default {
     data() {
         return {
@@ -56,7 +64,8 @@ export default {
                     update: true,
                     delete: true,
                 }
-            ]
+            ],
+            dialog: false
         }
     },
     props: {
@@ -68,6 +77,9 @@ export default {
             type: Boolean,
             default: false
         }
+    },
+    components: {
+        bpamPermissionForm
     }
 }
 </script>

@@ -72,7 +72,7 @@
                  <v-divider></v-divider>
                 <v-row>
                     <v-col cols="12">
-                        <bpam-permission-list :allowEditAction="!readonly"></bpam-permission-list>
+                        <bpam-permission-list :allowEditAction="!readonly" :allowNewAction="!readonly"></bpam-permission-list>
                     </v-col>
                 </v-row>
             </v-card-text>
