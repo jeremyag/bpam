@@ -3,7 +3,7 @@
         flat
         absolute
         app>
-        <v-toolbar-title>BPAM <small>v1.0</small></v-toolbar-title>
+        <v-toolbar-title>BPAM <small>v.2020</small></v-toolbar-title>
         <v-spacer></v-spacer>
         <v-menu offset-y>
             <template v-slot:activator="{ on }">
