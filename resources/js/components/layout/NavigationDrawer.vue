@@ -77,7 +77,7 @@
                     </v-list-item-icon>
                     <v-list-item-title>Users</v-list-item-title>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link :to="'/roles'">
                     <v-list-item-icon>
                         <v-icon>perm_identity</v-icon>
                     </v-list-item-icon>
