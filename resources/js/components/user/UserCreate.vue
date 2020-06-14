@@ -5,12 +5,11 @@
                 <v-icon>chevron_right</v-icon>
             </template>
         </v-breadcrumbs>
-        <app-user-form></app-user-form>
+        <bpam-user-form :title="'User Registration'"></bpam-user-form>
     </div>
 </template>
 
 <script>
-import UserForm from "./UserForm";
 export default {
     data() {
         return {
@@ -27,8 +26,5 @@ export default {
             ]
         };
     },
-    components: {
-        'AppUserForm': UserForm
-    }
 }
 </script>
