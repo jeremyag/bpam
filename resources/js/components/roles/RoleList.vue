@@ -18,7 +18,7 @@
                         color="primary"
                         dark
                         class="mb-2"
-                        :to="'/user/new'">
+                        :to="'/role/new'">
                         New Role
                     </v-btn>
                 </v-toolbar>

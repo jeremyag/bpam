@@ -19,6 +19,8 @@ import UserEdit from '../components/user/UserEdit.vue';
  * Roles Module
  */
 import RoleList from '../components/roles/RoleList.vue';
+import Role from '../components/roles/Role.vue';
+import RoleCreate from '../components/roles/RoleCreate.vue';
 
 const options = {
     routes: [
@@ -32,7 +34,12 @@ const options = {
                 {path: ':id/edit', component: UserEdit}
             ]
         },
-        {path: '/roles', component: RoleList}
+        {path: '/roles', component: RoleList},
+        {path: '/role', component: Role,
+            children: [
+                {path: 'new', component: RoleCreate}
+            ]
+        }
     ]
 };
 export default new VueRouter(options);
