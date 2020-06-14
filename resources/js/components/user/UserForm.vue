@@ -5,7 +5,7 @@
             <v-toolbar flat>
                 <v-card-title>{{ title }}</v-card-title>
                 <v-spacer></v-spacer>
-                <v-menu offset-y v-if="editmode && user.id">
+                <v-menu offset-y v-if="user.id">
                     <template v-slot:activator="{ on }">
                         <v-btn
                             icon
@@ -15,6 +15,24 @@
                         </v-btn>
                     </template>
                     <v-list>
+                        <v-list-item
+                        v-if="editmode"
+                        :to="'/user/'+user.id"
+                        link>
+                            <v-list-item-icon>
+                                <v-icon color="green">visibility</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>View</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item
+                        v-else
+                        :to="'/user/'+user.id+'/edit'"
+                        link>
+                            <v-list-item-icon>
+                                <v-icon color="grey">edit</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>Edit</v-list-item-title>
+                        </v-list-item>
                         <v-list-item
                         link>
                             <v-list-item-icon>
