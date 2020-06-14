@@ -30,6 +30,9 @@ Vue.component('navigation-drawer', require('./components/layout/NavigationDrawer
 Vue.component('bpam-app-bar', require('./components/layout/AppBar.vue').default);
 
 
+Vue.component('bpam-user-form', require('./components/user/UserForm.vue').default);
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -11,6 +11,7 @@
                     <v-row>
                         <v-col col="4">
                             <v-text-field
+                                :disabled="readonly"
                                 label="First name"
                                 outlined
                                 required
@@ -19,6 +20,7 @@
                         </v-col>
                        <v-col col="4">
                             <v-text-field
+                                :disabled="readonly"
                                 label="Middle name"
                                 outlined
                                 required
@@ -27,6 +29,7 @@
                        </v-col>
                         <v-col col="4">
                             <v-text-field
+                                :disabled="readonly"
                                 label="Last name"
                                 outlined
                                 required
@@ -37,6 +40,7 @@
                     <v-row>
                         <v-col col="12">
                             <v-text-field
+                                :disabled="readonly"
                                 label="Email"
                                 :type="'email'"
                                 outlined
@@ -48,6 +52,7 @@
                     <v-row>
                         <v-col col="12">
                             <v-text-field
+                                :disabled="readonly"
                                 label="Username"
                                 outlined
                                 required
@@ -58,6 +63,7 @@
                     <v-row>
                        <v-col col="6">
                             <v-text-field
+                            :disabled="readonly"
                             label="Password"
                             outlined
                             required
@@ -69,6 +75,7 @@
                        </v-col>
                        <v-col col="6">
                             <v-text-field
+                            :disabled="readonly"
                             label="Confirm Password"
                             outlined
                             required
@@ -82,6 +89,7 @@
                     <v-row>
                         <v-col cols="12">
                             <v-select
+                                :disabled="readonly"
                                 label="Role"
                                 outlined
                                 :items="roles"
@@ -91,7 +99,7 @@
                     </v-row>
                 </v-form>
             </v-card-text>
-            <v-card-actions>
+            <v-card-actions v-if="!readonly">
                 <v-spacer></v-spacer>
                 <v-btn color="red darken-1" text
                     @click="clear">Clear</v-btn>
@@ -137,6 +145,16 @@ export default {
             roles: [
                 {text: "Superadmin", value:1}
             ]
+        }
+    },
+    props: {
+        readonly: {
+            type: Boolean,
+            default: false
+        },
+        title: {
+            type: String,
+            default: "User Form"
         }
     },
     methods: {
