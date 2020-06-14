@@ -16,14 +16,8 @@
             </template>
             <v-list>
                 <v-list-item
-                   link>
-                    <v-list-item-icon>
-                        <v-icon>person</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>Account Settings</v-list-item-title>
-                </v-list-item>
-                <v-list-item
-                   link>
+                   link
+                   :to="'/settings'">
                     <v-list-item-icon>
                         <v-icon>settings</v-icon>
                     </v-list-item-icon>

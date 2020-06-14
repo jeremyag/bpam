@@ -33,6 +33,11 @@ import ModuleCreate from '../components/module/ModuleCreate.vue';
 import ModuleRead from '../components/module/ModuleRead.vue';
 import ModuleEdit from '../components/module/ModuleEdit.vue';
 
+/**
+ * Settings Module
+ */
+import Settings from '../components/settings/Settings.vue';
+
 const options = {
     routes: [
         {path: '/login', component: Login},
@@ -60,7 +65,8 @@ const options = {
                 {path: ':id', component: ModuleRead},
                 {path: ':id/edit', component: ModuleEdit}
             ]    
-        }
+        },
+        {path: '/settings', component: Settings}
     ]
 };
 export default new VueRouter(options);
