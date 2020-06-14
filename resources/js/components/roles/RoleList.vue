@@ -8,7 +8,7 @@
 
         <v-data-table
             :headers="headers"
-            :items="users"
+            :items="roles"
             >
             <template v-slot:top>
                 <v-toolbar flat color="white">
@@ -51,7 +51,7 @@ export default {
                 {text: "Description", value: "description"},
                 {text: "Actions", value: "actions", sortable: false}
             ],
-            users: [
+            roles: [
                 {
                     id: 1,
                     name: "Superadmin",

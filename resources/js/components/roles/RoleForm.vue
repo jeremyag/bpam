@@ -69,6 +69,12 @@
                         </v-col>
                     </v-row>
                 </v-form>
+                 <v-divider></v-divider>
+                <v-row>
+                    <v-col cols="12">
+                        <bpam-permission-list :allowEditAction="!readonly"></bpam-permission-list>
+                    </v-col>
+                </v-row>
             </v-card-text>
             <v-card-actions v-if="!readonly">
                 <v-spacer></v-spacer>
@@ -82,6 +88,8 @@
 </template>
 
 <script>
+import bpamPermissionList from '../permission/PermissionList.vue';
+
 export default {
     data () {
         return {
@@ -119,6 +127,9 @@ export default {
         clear() {
             this.$refs.form.reset()
         }
+    },
+    components: {
+        bpamPermissionList
     }
 }
 </script>
