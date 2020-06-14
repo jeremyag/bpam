@@ -13,6 +13,7 @@ import UserList from '../components/user/UserList.vue';
 import User from '../components/user/User.vue';
 import UserCreate from '../components/user/UserCreate.vue';
 import UserRead from '../components/user/UserRead.vue';
+import UserEdit from '../components/user/UserEdit.vue';
 
 const options = {
     routes: [
@@ -23,7 +24,7 @@ const options = {
             children: [
                 {path: 'new', component: UserCreate},
                 {path: ':id', component: UserRead},
-                {path: ':id/edit', component: UserRead}
+                {path: ':id/edit', component: UserEdit}
             ]
         },
     ]

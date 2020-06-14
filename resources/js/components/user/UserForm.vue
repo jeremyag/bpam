@@ -2,10 +2,29 @@
     <div>
         <v-card class="card-form"
             outlined>
-            <v-card-title class="card-title">
-                {{ title }}
+            <v-toolbar flat>
+                <v-card-title>{{ title }}</v-card-title>
                 <v-spacer></v-spacer>
-            </v-card-title>
+                <v-menu offset-y v-if="editmode && user.id">
+                    <template v-slot:activator="{ on }">
+                        <v-btn
+                            icon
+                            v-on="on"
+                        >
+                            <v-icon>more_vert</v-icon>
+                        </v-btn>
+                    </template>
+                    <v-list>
+                        <v-list-item
+                        link>
+                            <v-list-item-icon>
+                                <v-icon color="red">delete</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>Delete</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </v-toolbar>
             <v-card-text>
                 <v-form ref="form" v-model="valid" lazy-validation>
                     <v-row>
@@ -97,6 +116,17 @@
                                 v-model="user.role"></v-select>
                         </v-col>
                     </v-row>
+                    <v-row>
+                        <v-col cols="12">
+                            <v-select
+                                :disabled="readonly"
+                                label="Active"
+                                outlined
+                                :items="active"
+                                :rules="rules.requiredRules"
+                                v-model="user.active"></v-select>
+                        </v-col>
+                    </v-row>
                 </v-form>
             </v-card-text>
             <v-card-actions v-if="!readonly">
@@ -115,6 +145,7 @@ export default {
     data () {
         return {
             user: {
+                id: 1,
                 first_name: "",
                 middle_name: "",
                 last_name: "",
@@ -144,6 +175,10 @@ export default {
             showPassword2: false,
             roles: [
                 {text: "Superadmin", value:1}
+            ],
+            active: [
+                {text: "Active", value: "active"},
+                {text: "Deactivated", value: "deactivated"}
             ]
         }
     },
@@ -155,6 +190,10 @@ export default {
         title: {
             type: String,
             default: "User Form"
+        },
+        editmode: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {
