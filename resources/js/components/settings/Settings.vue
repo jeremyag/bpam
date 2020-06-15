@@ -5,8 +5,8 @@
                 <v-icon>chevron_right</v-icon>
             </template>
         </v-breadcrumbs>
-        <v-card flat>
-            <v-toolbar flat>
+        <v-card flat outlined>
+            <v-toolbar flat outlined>
                 <v-toolbar-title>Settings</v-toolbar-title>
             </v-toolbar>
             <v-tabs vertical>
@@ -20,7 +20,7 @@
                     Verification Documents
                 </v-tab>
                 <v-tab-item>
-                    
+                    <bpam-general-settings></bpam-general-settings>
                 </v-tab-item>
                 <v-tab-item>
                     Testing
@@ -33,6 +33,7 @@
     </v-container>
 </template>
 <script>
+import bpamGeneralSettings from './General.vue';
 export default {
     data() {
         return {
@@ -43,6 +44,9 @@ export default {
                 }
             ]
         };
+    },
+    components: {
+        bpamGeneralSettings
     }
 }
 </script>
