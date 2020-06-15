@@ -10,30 +10,26 @@
                 <v-toolbar-title>Settings</v-toolbar-title>
             </v-toolbar>
             <v-tabs vertical>
-                <v-tab>
+                <v-tab :to="'/settings/general'">
                     General
                 </v-tab>
-                <v-tab>
+                <v-tab :to="'/settings/assessment-fees'">
                     Assessment Fees
                 </v-tab>
-                <v-tab>
+                <v-tab :to="'/settings/verification-documents'">
                     Verification Documents
                 </v-tab>
-                <v-tab-item>
-                    <bpam-general-settings></bpam-general-settings>
-                </v-tab-item>
-                <v-tab-item>
-                    Testing
-                </v-tab-item>
-                <v-tab-item>
-                    Testing
-                </v-tab-item>
+                <v-tabs-items>
+                    <v-container>
+                        <router-view></router-view>
+                    </v-container>
+                </v-tabs-items>
             </v-tabs>
+            
         </v-card>
     </v-container>
 </template>
 <script>
-import bpamGeneralSettings from './General.vue';
 export default {
     data() {
         return {
@@ -44,9 +40,6 @@ export default {
                 }
             ]
         };
-    },
-    components: {
-        bpamGeneralSettings
     }
 }
 </script>

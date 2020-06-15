@@ -17,7 +17,7 @@
             <v-list>
                 <v-list-item
                    link
-                   :to="'/settings'">
+                   :to="'/settings/general'">
                     <v-list-item-icon>
                         <v-icon>settings</v-icon>
                     </v-list-item-icon>

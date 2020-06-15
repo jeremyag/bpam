@@ -37,6 +37,8 @@ import ModuleEdit from '../components/module/ModuleEdit.vue';
  * Settings Module
  */
 import Settings from '../components/settings/Settings.vue';
+import GeneralSettings from '../components/settings/General.vue';
+import AssessmentFeesListSettings from '../components/settings/assessment_fees/AssessmentFeesListSettings.vue';
 
 const options = {
     routes: [
@@ -66,7 +68,20 @@ const options = {
                 {path: ':id/edit', component: ModuleEdit}
             ]    
         },
-        {path: '/settings', component: Settings}
+        {path: '/settings', component: Settings,
+            children: [
+                {path: 'general', component: GeneralSettings},
+                {
+                    path: 'assessment-fees',
+                    component: AssessmentFeesListSettings,
+                    props: {
+                        allowNewAction: true,
+                        byDialog: true
+                    }
+                },
+                {path: 'verification-documents'}
+            ]
+        }
     ]
 };
 export default new VueRouter(options);
