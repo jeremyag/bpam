@@ -4,9 +4,9 @@
         color="#0747a6"
         :mini-variant.sync="mini"
         permanent
-        absolute
         dark
         app
+        fixed
     >
         <v-list-item class="px-2">
             <v-list-item-avatar>
@@ -30,7 +30,7 @@
             dense
             nav
             rounded>
-            <v-list-item link>
+            <v-list-item link :to="'/home'">
                 <v-list-item-icon>
                     <v-icon>home</v-icon>
                 </v-list-item-icon>
@@ -71,23 +71,23 @@
             </v-list-item-group>
             <v-subheader inset>Administration</v-subheader>
             <v-list-item-group>
-                <v-list-item link>
+                <v-list-item link :to="'/users'">
                     <v-list-item-icon>
                         <v-icon>supervised_user_circle</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Users</v-list-item-title>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link :to="'/roles'">
                     <v-list-item-icon>
                         <v-icon>perm_identity</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Roles</v-list-item-title>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link :to="'/modules'">
                     <v-list-item-icon>
-                        <v-icon>how_to_reg</v-icon>
+                        <v-icon>view_module</v-icon>
                     </v-list-item-icon>
-                    <v-list-item-title>Permissions</v-list-item-title>
+                    <v-list-item-title>Modules</v-list-item-title>
                 </v-list-item>
             </v-list-item-group>
         </v-list>

@@ -31,6 +31,11 @@ Vue.component('bpam-app-bar', require('./components/layout/AppBar.vue').default)
 Vue.component('bpam-footer', require('./components/layout/Footer.vue').default);
 
 
+Vue.component('bpam-user-form', require('./components/user/UserForm.vue').default);
+Vue.component('bpam-role-form', require('./components/roles/RoleForm.vue').default);
+Vue.component('bpam-module-form', require('./components/module/ModuleForm.vue').default);
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
