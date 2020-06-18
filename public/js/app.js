@@ -1947,6 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -3255,14 +3256,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       assessmentFee: {
         id: 1,
-        name: ""
+        name: "",
+        description: ""
       }
     };
+  },
+  props: {
+    readonly: {
+      "default": false,
+      type: Boolean
+    }
   }
 });
 
@@ -3278,6 +3289,95 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AssessmentFeeSettingsForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AssessmentFeeSettingsForm */ "./resources/js/components/settings/assessment_fees/AssessmentFeeSettingsForm.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3379,7 +3479,10 @@ __webpack_require__.r(__webpack_exports__);
         type: "Type",
         description: "Description"
       }],
-      dialog: false
+      dialog: false,
+      readDialog: false,
+      editDialog: false,
+      deleteDialog: false
     };
   },
   props: {
@@ -3391,6 +3494,14 @@ __webpack_require__.r(__webpack_exports__);
       type: Boolean,
       "default": false
     },
+    allowEditAction: {
+      type: Boolean,
+      "default": false
+    },
+    allowDeleteAction: {
+      type: Boolean,
+      "default": false
+    },
     byDialog: {
       type: Boolean,
       "default": false
@@ -3398,6 +3509,292 @@ __webpack_require__.r(__webpack_exports__);
   },
   components: {
     bpamAssessmentFeeSettingsForm: _AssessmentFeeSettingsForm__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _verification_documents_VerificationDocumentSettingsForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../verification_documents/VerificationDocumentSettingsForm.vue */ "./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      headers: [{
+        text: "Id",
+        sortable: true,
+        value: "id"
+      }, {
+        text: "Name",
+        sortable: true,
+        value: "name"
+      }, {
+        text: "Type",
+        sortable: true,
+        value: "type"
+      }, {
+        text: "Description",
+        sortable: true,
+        value: "description"
+      }, {
+        text: "Actions",
+        sortable: false,
+        value: "actions"
+      }],
+      verificationDocuments: [{
+        id: "1",
+        name: "Verification Documents",
+        type: "Type",
+        description: "Description"
+      }],
+      dialog: false,
+      readDialog: false,
+      editDialog: false,
+      deleteDialog: false
+    };
+  },
+  props: {
+    allowNewAction: {
+      type: Boolean,
+      "default": false
+    },
+    allowReadAction: {
+      type: Boolean,
+      "default": false
+    },
+    allowEditAction: {
+      type: Boolean,
+      "default": false
+    },
+    allowDeleteAction: {
+      type: Boolean,
+      "default": false
+    },
+    byDialog: {
+      type: Boolean,
+      "default": false
+    }
+  },
+  components: {
+    bpamVerificationDocumentSettingsForm: _verification_documents_VerificationDocumentSettingsForm_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      verificationDocument: {
+        id: 1,
+        name: "",
+        description: ""
+      }
+    };
+  },
+  props: {
+    readonly: {
+      "default": false,
+      type: Boolean
+    }
   }
 });
 
@@ -40287,7 +40684,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    asdfasdfasdf\n")])
+  return _c(
+    "v-content",
+    { attrs: { app: "" } },
+    [_c("v-container", [_vm._v("\n        This is the Home\n    ")])],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -40368,7 +40770,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-list-item",
-                { attrs: { link: "" } },
+                { attrs: { link: "", href: "/login" } },
                 [
                   _c(
                     "v-list-item-icon",
@@ -40385,6 +40787,48 @@ var render = function() {
           )
         ],
         1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/Footer.vue?vue&type=template&id=e4df7ff6&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/layout/Footer.vue?vue&type=template&id=e4df7ff6& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-footer",
+    { attrs: { app: "" } },
+    [
+      _c(
+        "v-col",
+        {
+          staticClass: "text-center",
+          attrs: { cols: "12", inset: "", padless: "", absolute: "" }
+        },
+        [
+          _vm._v("\n        " + _vm._s(new Date().getFullYear()) + " © "),
+          _c("strong", [_vm._v("BPAM "), _c("small", [_vm._v("v.2020")])]),
+          _vm._v(" - All Rights Reserved\n    ")
+        ]
       )
     ],
     1
@@ -42451,9 +42895,18 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.enabledChange
-                    ? _c("v-btn", { attrs: { color: "primary", text: "" } }, [
-                        _vm._v("Update")
-                      ])
+                    ? _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary", text: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.enabledChange = false
+                            }
+                          }
+                        },
+                        [_vm._v("Update")]
+                      )
                     : _vm._e()
                 ],
                 1
@@ -42584,7 +43037,11 @@ var render = function() {
             { attrs: { cols: "12" } },
             [
               _c("v-text-field", {
-                attrs: { outlined: "", label: "Name" },
+                attrs: {
+                  disabled: _vm.readonly ? true : false,
+                  outlined: "",
+                  label: "Name"
+                },
                 model: {
                   value: _vm.assessmentFee.name,
                   callback: function($$v) {
@@ -42608,7 +43065,11 @@ var render = function() {
             { attrs: { cols: "12" } },
             [
               _c("v-text-field", {
-                attrs: { outlined: "", label: "Type" },
+                attrs: {
+                  disabled: _vm.readonly ? true : false,
+                  outlined: "",
+                  label: "Type"
+                },
                 model: {
                   value: _vm.assessmentFee.type,
                   callback: function($$v) {
@@ -42632,7 +43093,11 @@ var render = function() {
             { attrs: { cols: "12" } },
             [
               _c("v-textarea", {
-                attrs: { outlined: "", label: "Description" },
+                attrs: {
+                  disabled: _vm.readonly ? true : false,
+                  outlined: "",
+                  label: "Description"
+                },
                 model: {
                   value: _vm.assessmentFee.description,
                   callback: function($$v) {
@@ -42856,15 +43321,789 @@ var render = function() {
             fn: function() {
               return [
                 _vm.allowReadAction
-                  ? _c("div", [
+                  ? _c("span", [
                       _vm.byDialog
                         ? _c(
-                            "div",
+                            "span",
+                            [
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: {
+                                    "max-width": "600px",
+                                    persistent: ""
+                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "mr-2",
+                                                    attrs: {
+                                                      icon: "",
+                                                      small: "",
+                                                      color: "green"
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("visibility")
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2828521399
+                                  ),
+                                  model: {
+                                    value: _vm.readDialog,
+                                    callback: function($$v) {
+                                      _vm.readDialog = $$v
+                                    },
+                                    expression: "readDialog"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c("v-card-title", [
+                                        _c(
+                                          "span",
+                                          { staticClass: "headline" },
+                                          [_vm._v("Assessment Fee")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-text",
+                                        [
+                                          _c(
+                                            "v-container",
+                                            [
+                                              _c(
+                                                "bpam-assessment-fee-settings-form",
+                                                { attrs: { readonly: "" } }
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "red darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.readDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Close")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _c(
+                            "span",
                             [
                               _c("v-icon", {
                                 staticClass: "mr-2",
                                 attrs: { small: "" }
                               })
+                            ],
+                            1
+                          )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.allowEditAction
+                  ? _c("span", [
+                      _vm.byDialog
+                        ? _c(
+                            "span",
+                            [
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: {
+                                    "max-width": "600px",
+                                    persistent: ""
+                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "mr-2",
+                                                    attrs: {
+                                                      icon: "",
+                                                      small: "",
+                                                      color: "grey"
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [_c("v-icon", [_vm._v("edit")])],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2401407423
+                                  ),
+                                  model: {
+                                    value: _vm.editDialog,
+                                    callback: function($$v) {
+                                      _vm.editDialog = $$v
+                                    },
+                                    expression: "editDialog"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c("v-card-title", [
+                                        _c(
+                                          "span",
+                                          { staticClass: "headline" },
+                                          [_vm._v("Edit Assessment Fee")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-text",
+                                        [
+                                          _c(
+                                            "v-container",
+                                            [
+                                              _c(
+                                                "bpam-assessment-fee-settings-form"
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "red darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.editDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Close")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "blue darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.editDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Update")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _c(
+                            "span",
+                            [
+                              _c("v-icon", {
+                                staticClass: "mr-2",
+                                attrs: { small: "" }
+                              })
+                            ],
+                            1
+                          )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.allowDeleteAction
+                  ? _c("span", [
+                      _vm.byDialog
+                        ? _c(
+                            "span",
+                            [
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: {
+                                    "max-width": "600px",
+                                    persistent: ""
+                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "mr-2",
+                                                    attrs: {
+                                                      icon: "",
+                                                      small: "",
+                                                      color: "red"
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                _c("v-icon", [_vm._v("delete")])
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2453946144
+                                  ),
+                                  model: {
+                                    value: _vm.deleteDialog,
+                                    callback: function($$v) {
+                                      _vm.deleteDialog = $$v
+                                    },
+                                    expression: "deleteDialog"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c("v-card-title", [
+                                        _c(
+                                          "span",
+                                          { staticClass: "headline" },
+                                          [_vm._v("Delete Assessment Fee")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-text",
+                                        [
+                                          _c(
+                                            "v-container",
+                                            [
+                                              _vm._v(
+                                                "\n                                    Are you sure you want to delete this item?\n                                    "
+                                              ),
+                                              _c(
+                                                "bpam-assessment-fee-settings-form",
+                                                { attrs: { readonly: "" } }
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "red darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.deleteDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Cancel")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "orange darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.deleteDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Delete")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _c(
+                            "span",
+                            [
+                              _c("v-icon", {
+                                staticClass: "mr-2",
+                                attrs: { small: "" }
+                              })
+                            ],
+                            1
+                          )
+                    ])
+                  : _vm._e()
+              ]
+            },
+            proxy: true
+          }
+        ])
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=template&id=46039af1&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=template&id=46039af1& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("v-data-table", {
+        attrs: { headers: _vm.headers, items: _vm.verificationDocuments },
+        scopedSlots: _vm._u([
+          {
+            key: "top",
+            fn: function() {
+              return [
+                _c(
+                  "v-toolbar",
+                  { attrs: { flat: "", color: "white" } },
+                  [
+                    _c("v-toolbar-title", [
+                      _vm._v("Verification Document Lists")
+                    ]),
+                    _vm._v(" "),
+                    _c("v-spacer"),
+                    _vm._v(" "),
+                    _vm.allowNewAction
+                      ? _c("div", [
+                          _vm.byDialog
+                            ? _c(
+                                "div",
+                                [
+                                  _c(
+                                    "v-dialog",
+                                    {
+                                      attrs: {
+                                        "max-width": "600px",
+                                        persistent: ""
+                                      },
+                                      scopedSlots: _vm._u(
+                                        [
+                                          {
+                                            key: "activator",
+                                            fn: function(ref) {
+                                              var on = ref.on
+                                              var attrs = ref.attrs
+                                              return [
+                                                _c(
+                                                  "v-btn",
+                                                  _vm._g(
+                                                    _vm._b(
+                                                      {
+                                                        staticClass: "mb-2",
+                                                        attrs: {
+                                                          color: "primary",
+                                                          dark: ""
+                                                        }
+                                                      },
+                                                      "v-btn",
+                                                      attrs,
+                                                      false
+                                                    ),
+                                                    on
+                                                  ),
+                                                  [
+                                                    _vm._v(
+                                                      "New Verification Document"
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        null,
+                                        false,
+                                        2206950648
+                                      ),
+                                      model: {
+                                        value: _vm.dialog,
+                                        callback: function($$v) {
+                                          _vm.dialog = $$v
+                                        },
+                                        expression: "dialog"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card",
+                                        [
+                                          _c("v-card-title", [
+                                            _c(
+                                              "span",
+                                              { staticClass: "headline" },
+                                              [
+                                                _vm._v(
+                                                  "New Verification Document"
+                                                )
+                                              ]
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-card-text",
+                                            [
+                                              _c(
+                                                "v-container",
+                                                [
+                                                  _c(
+                                                    "bpam-verification-document-settings-form"
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-card-actions",
+                                            [
+                                              _c("v-spacer"),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  attrs: {
+                                                    color: "red darken-1",
+                                                    text: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.dialog = false
+                                                    }
+                                                  }
+                                                },
+                                                [_vm._v("Cancel")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  attrs: {
+                                                    color: "blue darken-1",
+                                                    text: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.dialog = false
+                                                    }
+                                                  }
+                                                },
+                                                [_vm._v("Save")]
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            : _c(
+                                "div",
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass: "mb-2",
+                                      attrs: {
+                                        color: "primary",
+                                        dark: "",
+                                        to:
+                                          "/settings/verification-document/new"
+                                      }
+                                    },
+                                    [_vm._v("New Assessment Fee")]
+                                  )
+                                ],
+                                1
+                              )
+                        ])
+                      : _vm._e()
+                  ],
+                  1
+                )
+              ]
+            },
+            proxy: true
+          },
+          {
+            key: "item.actions",
+            fn: function() {
+              return [
+                _vm.allowReadAction
+                  ? _c("span", [
+                      _vm.byDialog
+                        ? _c(
+                            "span",
+                            [
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: {
+                                    "max-width": "600px",
+                                    persistent: ""
+                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "mr-2",
+                                                    attrs: {
+                                                      icon: "",
+                                                      small: "",
+                                                      color: "green"
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("visibility")
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2828521399
+                                  ),
+                                  model: {
+                                    value: _vm.readDialog,
+                                    callback: function($$v) {
+                                      _vm.readDialog = $$v
+                                    },
+                                    expression: "readDialog"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c("v-card-title", [
+                                        _c(
+                                          "span",
+                                          { staticClass: "headline" },
+                                          [_vm._v("Verification Document")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-text",
+                                        [
+                                          _c(
+                                            "v-container",
+                                            [
+                                              _c(
+                                                "bpam-verification-document-settings-form",
+                                                { attrs: { readonly: "" } }
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "red darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.readDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Close")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
                             ],
                             1
                           )
@@ -42881,15 +44120,407 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _c("v-icon", { staticClass: "mr-2", attrs: { small: "" } }, [
-                  _vm._v("visibility")
-                ])
+                _vm.allowEditAction
+                  ? _c("span", [
+                      _vm.byDialog
+                        ? _c(
+                            "span",
+                            [
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: {
+                                    "max-width": "600px",
+                                    persistent: ""
+                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "mr-2",
+                                                    attrs: {
+                                                      icon: "",
+                                                      small: "",
+                                                      color: "grey"
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [_c("v-icon", [_vm._v("edit")])],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2401407423
+                                  ),
+                                  model: {
+                                    value: _vm.editDialog,
+                                    callback: function($$v) {
+                                      _vm.editDialog = $$v
+                                    },
+                                    expression: "editDialog"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c("v-card-title", [
+                                        _c(
+                                          "span",
+                                          { staticClass: "headline" },
+                                          [_vm._v("Edit Verification Document")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-text",
+                                        [
+                                          _c(
+                                            "v-container",
+                                            [
+                                              _c(
+                                                "bpam-verification-document-settings-form"
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "red darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.editDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Close")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "blue darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.editDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Update")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e()
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.allowDeleteAction
+                  ? _c("span", [
+                      _vm.byDialog
+                        ? _c(
+                            "span",
+                            [
+                              _c(
+                                "v-dialog",
+                                {
+                                  attrs: {
+                                    "max-width": "600px",
+                                    persistent: ""
+                                  },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "mr-2",
+                                                    attrs: {
+                                                      icon: "",
+                                                      small: "",
+                                                      color: "red"
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                _c("v-icon", [_vm._v("delete")])
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2453946144
+                                  ),
+                                  model: {
+                                    value: _vm.deleteDialog,
+                                    callback: function($$v) {
+                                      _vm.deleteDialog = $$v
+                                    },
+                                    expression: "deleteDialog"
+                                  }
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card",
+                                    [
+                                      _c("v-card-title", [
+                                        _c(
+                                          "span",
+                                          { staticClass: "headline" },
+                                          [_vm._v("Delete Assessment Fee")]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-text",
+                                        [
+                                          _c(
+                                            "v-container",
+                                            [
+                                              _vm._v(
+                                                "\n                                    Are you sure you want to delete this item?\n                                    "
+                                              ),
+                                              _c(
+                                                "bpam-verification-document-settings-form",
+                                                { attrs: { readonly: "" } }
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c("v-spacer"),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "red darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.deleteDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Cancel")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "orange darken-1",
+                                                text: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.deleteDialog = false
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Delete")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e()
+                    ])
+                  : _vm._e()
               ]
             },
             proxy: true
           }
         ])
       })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-form",
+    [
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  disabled: _vm.readonly ? true : false,
+                  outlined: "",
+                  label: "Name"
+                },
+                model: {
+                  value: _vm.verificationDocument.name,
+                  callback: function($$v) {
+                    _vm.$set(_vm.verificationDocument, "name", $$v)
+                  },
+                  expression: "verificationDocument.name"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c("v-text-field", {
+                attrs: {
+                  disabled: _vm.readonly ? true : false,
+                  outlined: "",
+                  label: "Type"
+                },
+                model: {
+                  value: _vm.verificationDocument.type,
+                  callback: function($$v) {
+                    _vm.$set(_vm.verificationDocument, "type", $$v)
+                  },
+                  expression: "verificationDocument.type"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { attrs: { cols: "12" } },
+            [
+              _c("v-textarea", {
+                attrs: {
+                  disabled: _vm.readonly ? true : false,
+                  outlined: "",
+                  label: "Description"
+                },
+                model: {
+                  value: _vm.verificationDocument.description,
+                  callback: function($$v) {
+                    _vm.$set(_vm.verificationDocument, "description", $$v)
+                  },
+                  expression: "verificationDocument.description"
+                }
+              })
+            ],
+            1
+          )
+        ],
+        1
+      )
     ],
     1
   )
@@ -42982,9 +44613,11 @@ var render = function() {
                         [
                           _c("v-spacer"),
                           _vm._v(" "),
-                          _c("v-btn", { attrs: { color: "primary" } }, [
-                            _vm._v("Login")
-                          ])
+                          _c(
+                            "v-btn",
+                            { attrs: { color: "primary", href: "/" } },
+                            [_vm._v("Login")]
+                          )
                         ],
                         1
                       )
@@ -100653,7 +102286,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _plugins_vuetify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugins/vuetify */ "./resources/js/plugins/vuetify.js");
 /* harmony import */ var _plugins_route__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./plugins/route */ "./resources/js/plugins/route.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -100676,9 +102308,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('navigation-drawer', __webpack_require__(/*! ./components/layout/NavigationDrawer.vue */ "./resources/js/components/layout/NavigationDrawer.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bpam-app-bar', __webpack_require__(/*! ./components/layout/AppBar.vue */ "./resources/js/components/layout/AppBar.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bpam-footer', __webpack_require__(/*! ./components/layout/Footer.vue */ "./resources/js/components/layout/Footer.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bpam-login-form', __webpack_require__(/*! ./components/user/Login.vue */ "./resources/js/components/user/Login.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bpam-user-form', __webpack_require__(/*! ./components/user/UserForm.vue */ "./resources/js/components/user/UserForm.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bpam-role-form', __webpack_require__(/*! ./components/roles/RoleForm.vue */ "./resources/js/components/roles/RoleForm.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bpam-module-form', __webpack_require__(/*! ./components/module/ModuleForm.vue */ "./resources/js/components/module/ModuleForm.vue")["default"]);
@@ -100858,6 +102491,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppBar_vue_vue_type_template_id_687bb11c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppBar_vue_vue_type_template_id_687bb11c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/Footer.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/layout/Footer.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Footer_vue_vue_type_template_id_e4df7ff6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.vue?vue&type=template&id=e4df7ff6& */ "./resources/js/components/layout/Footer.vue?vue&type=template&id=e4df7ff6&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Footer_vue_vue_type_template_id_e4df7ff6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Footer_vue_vue_type_template_id_e4df7ff6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/layout/Footer.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/Footer.vue?vue&type=template&id=e4df7ff6&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/layout/Footer.vue?vue&type=template&id=e4df7ff6& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_template_id_e4df7ff6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Footer.vue?vue&type=template&id=e4df7ff6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/Footer.vue?vue&type=template&id=e4df7ff6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_template_id_e4df7ff6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Footer_vue_vue_type_template_id_e4df7ff6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -102212,6 +103898,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VerificationDocumentListSettings_vue_vue_type_template_id_46039af1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VerificationDocumentListSettings.vue?vue&type=template&id=46039af1& */ "./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=template&id=46039af1&");
+/* harmony import */ var _VerificationDocumentListSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VerificationDocumentListSettings.vue?vue&type=script&lang=js& */ "./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _VerificationDocumentListSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VerificationDocumentListSettings_vue_vue_type_template_id_46039af1___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VerificationDocumentListSettings_vue_vue_type_template_id_46039af1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentListSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./VerificationDocumentListSettings.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentListSettings_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=template&id=46039af1&":
+/*!*************************************************************************************************************************************!*\
+  !*** ./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=template&id=46039af1& ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentListSettings_vue_vue_type_template_id_46039af1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./VerificationDocumentListSettings.vue?vue&type=template&id=46039af1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue?vue&type=template&id=46039af1&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentListSettings_vue_vue_type_template_id_46039af1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentListSettings_vue_vue_type_template_id_46039af1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _VerificationDocumentSettingsForm_vue_vue_type_template_id_2f640ed2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2& */ "./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2&");
+/* harmony import */ var _VerificationDocumentSettingsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VerificationDocumentSettingsForm.vue?vue&type=script&lang=js& */ "./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _VerificationDocumentSettingsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _VerificationDocumentSettingsForm_vue_vue_type_template_id_2f640ed2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _VerificationDocumentSettingsForm_vue_vue_type_template_id_2f640ed2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentSettingsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./VerificationDocumentSettingsForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentSettingsForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2&":
+/*!*************************************************************************************************************************************!*\
+  !*** ./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2& ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentSettingsForm_vue_vue_type_template_id_2f640ed2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/settings/verification_documents/VerificationDocumentSettingsForm.vue?vue&type=template&id=2f640ed2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentSettingsForm_vue_vue_type_template_id_2f640ed2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_VerificationDocumentSettingsForm_vue_vue_type_template_id_2f640ed2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/user/Login.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/user/Login.vue ***!
@@ -102745,6 +104569,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_settings_Settings_vue__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/settings/Settings.vue */ "./resources/js/components/settings/Settings.vue");
 /* harmony import */ var _components_settings_General_vue__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/settings/General.vue */ "./resources/js/components/settings/General.vue");
 /* harmony import */ var _components_settings_assessment_fees_AssessmentFeesListSettings_vue__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/settings/assessment_fees/AssessmentFeesListSettings.vue */ "./resources/js/components/settings/assessment_fees/AssessmentFeesListSettings.vue");
+/* harmony import */ var _components_settings_verification_documents_VerificationDocumentListSettings_vue__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/settings/verification_documents/VerificationDocumentListSettings.vue */ "./resources/js/components/settings/verification_documents/VerificationDocumentListSettings.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -102780,6 +104605,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /**
  * Settings Module
  */
+
 
 
 
@@ -102850,10 +104676,21 @@ var options = {
       component: _components_settings_assessment_fees_AssessmentFeesListSettings_vue__WEBPACK_IMPORTED_MODULE_21__["default"],
       props: {
         allowNewAction: true,
+        allowReadAction: true,
+        allowEditAction: true,
+        allowDeleteAction: true,
         byDialog: true
       }
     }, {
-      path: 'verification-documents'
+      path: 'verification-documents',
+      component: _components_settings_verification_documents_VerificationDocumentListSettings_vue__WEBPACK_IMPORTED_MODULE_22__["default"],
+      props: {
+        allowNewAction: true,
+        allowReadAction: true,
+        allowEditAction: true,
+        allowDeleteAction: true,
+        byDialog: true
+      }
     }]
   }]
 };
@@ -102904,8 +104741,8 @@ var opts = {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/bpam/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/bpam/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\bpam\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\bpam\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
