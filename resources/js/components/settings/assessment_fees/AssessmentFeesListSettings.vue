@@ -50,29 +50,81 @@
                 <div v-if="allowReadAction">
                     <div
                         v-if="byDialog">
-                            <v-dialog v-model="readDialog" max-width="600px" persistent>
-                                <template v-slot:activator="{ on, attrs }">
-                                        <v-btn icon
-                                            small
-                                            v-bind="attrs"
-                                            v-on="on"
-                                            class="mr-2"><v-icon>visibility</v-icon></v-btn>
-                                </template>
-                                <v-card>
-                                    <v-card-title>
-                                        <span class="headline">Assessment Fee</span>
-                                    </v-card-title>
-                                    <v-card-text>
-                                        <v-container>
-                                            <bpam-assessment-fee-settings-form readMode></bpam-assessment-fee-settings-form>
-                                        </v-container>
-                                    </v-card-text>
-                                    <v-card-actions>
-                                        <v-spacer></v-spacer>
-                                        <v-btn color="red darken-1" text @click="readDialog = false">Close</v-btn>
-                                    </v-card-actions>
-                                </v-card>
-                            </v-dialog>
+                        <v-dialog v-model="readDialog" max-width="600px" persistent>
+                            <template v-slot:activator="{ on, attrs }">
+                                    <v-btn icon
+                                        small
+                                        v-bind="attrs"
+                                        v-on="on"
+                                        color="green"
+                                        class="mr-2"><v-icon>visibility</v-icon></v-btn>
+                            </template>
+                            <v-card>
+                                <v-card-title>
+                                    <span class="headline">Assessment Fee</span>
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-container>
+                                        <bpam-assessment-fee-settings-form readonly></bpam-assessment-fee-settings-form>
+                                    </v-container>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn color="red darken-1" text @click="readDialog = false">Close</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-dialog>
+                        <v-dialog v-model="editDialog" max-width="600px" persistent>
+                            <template v-slot:activator="{ on, attrs }">
+                                    <v-btn icon
+                                        small
+                                        v-bind="attrs"
+                                        v-on="on"
+                                        color="grey"
+                                        class="mr-2"><v-icon>edit</v-icon></v-btn>
+                            </template>
+                            <v-card>
+                                <v-card-title>
+                                    <span class="headline">Edit Assessment Fee</span>
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-container>
+                                        <bpam-assessment-fee-settings-form></bpam-assessment-fee-settings-form>
+                                    </v-container>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn color="red darken-1" text @click="editDialog = false">Close</v-btn>
+                                    <v-btn color="blue darken-1" text @click="editDialog = false">Update</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-dialog>
+                        <v-dialog v-model="deleteDialog" max-width="600px" persistent>
+                            <template v-slot:activator="{ on, attrs }">
+                                    <v-btn icon
+                                        small
+                                        v-bind="attrs"
+                                        v-on="on"
+                                        color="red"
+                                        class="mr-2"><v-icon>delete</v-icon></v-btn>
+                            </template>
+                            <v-card>
+                                <v-card-title>
+                                    <span class="headline">Delete Assessment Fee</span>
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-container>
+                                        Are you sure you want to delete this item?
+                                        <bpam-assessment-fee-settings-form readonly></bpam-assessment-fee-settings-form>
+                                    </v-container>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn color="red darken-1" text @click="deleteDialog = false">Cancel</v-btn>
+                                    <v-btn color="orange darken-1" text @click="deleteDialog = false">Delete</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-dialog>
                     </div>
                     <div v-else>
                         <v-icon
@@ -127,6 +179,8 @@
                 ],
                 dialog: false,
                 readDialog: false,
+                editDialog: false,
+                deleteDialog: false
             }
         },
         props: {
