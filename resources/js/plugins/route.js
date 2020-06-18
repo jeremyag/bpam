@@ -76,6 +76,7 @@ const options = {
                     component: AssessmentFeesListSettings,
                     props: {
                         allowNewAction: true,
+                        allowReadAction: true,
                         byDialog: true
                     }
                 },

@@ -50,9 +50,29 @@
                 <div v-if="allowReadAction">
                     <div
                         v-if="byDialog">
-                        <v-icon
-                            small
-                            class="mr-2"></v-icon>
+                            <v-dialog v-model="readDialog" max-width="600px" persistent>
+                                <template v-slot:activator="{ on, attrs }">
+                                        <v-btn icon
+                                            small
+                                            v-bind="attrs"
+                                            v-on="on"
+                                            class="mr-2"><v-icon>visibility</v-icon></v-btn>
+                                </template>
+                                <v-card>
+                                    <v-card-title>
+                                        <span class="headline">Assessment Fee</span>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        <v-container>
+                                            <bpam-assessment-fee-settings-form readMode></bpam-assessment-fee-settings-form>
+                                        </v-container>
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-spacer></v-spacer>
+                                        <v-btn color="red darken-1" text @click="readDialog = false">Close</v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                            </v-dialog>
                     </div>
                     <div v-else>
                         <v-icon
@@ -60,9 +80,6 @@
                             class="mr-2"></v-icon>
                     </div>
                 </div>
-                <v-icon
-                    small
-                    class="mr-2">visibility</v-icon>
             </template>
         </v-data-table>
     </div>
@@ -108,7 +125,8 @@
                         description: "Description",
                     }
                 ],
-                dialog: false
+                dialog: false,
+                readDialog: false,
             }
         },
         props: {
