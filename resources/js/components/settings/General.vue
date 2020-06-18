@@ -33,7 +33,7 @@
                         color="red darken-1" text @click="enabledChange = false">Cancel</v-btn>
                     <v-btn 
                         v-if="enabledChange"
-                        color="primary" text>Update</v-btn>
+                        color="primary" text @click="enabledChange = false">Update</v-btn>
                 </v-col>
             </v-row>
         </v-form>

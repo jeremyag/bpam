@@ -39,6 +39,7 @@ import ModuleEdit from '../components/module/ModuleEdit.vue';
 import Settings from '../components/settings/Settings.vue';
 import GeneralSettings from '../components/settings/General.vue';
 import AssessmentFeesListSettings from '../components/settings/assessment_fees/AssessmentFeesListSettings.vue';
+import VerificationDocumentListSettings from '../components/settings/verification_documents/VerificationDocumentListSettings.vue';
 
 const options = {
     routes: [
@@ -80,7 +81,17 @@ const options = {
                         byDialog: true
                     }
                 },
-                {path: 'verification-documents'}
+                {
+                    path: 'verification-documents',
+                    component: VerificationDocumentListSettings,
+                    props: {
+                        allowNewAction: true,
+                        allowReadAction: true,
+                        allowEditAction: true,
+                        allowDeleteAction: true,
+                        byDialog: true
+                    }
+                }
             ]
         }
     ]

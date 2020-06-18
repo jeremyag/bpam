@@ -25,7 +25,8 @@
                 </v-list-item>
                 <v-divider></v-divider>
                 <v-list-item
-                   link>
+                   link
+                   :href="'/login'">
                     <v-list-item-icon>
                         <v-icon>exit_to_app</v-icon>
                     </v-list-item-icon>

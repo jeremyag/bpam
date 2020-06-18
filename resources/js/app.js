@@ -24,11 +24,12 @@ window.Vue = require('vue');
 import Vue from 'vue'
 import vuetify from './plugins/vuetify';
 import router from './plugins/route';
-import VueRouter from 'vue-router';
 
 Vue.component('navigation-drawer', require('./components/layout/NavigationDrawer.vue').default);
 Vue.component('bpam-app-bar', require('./components/layout/AppBar.vue').default);
 Vue.component('bpam-footer', require('./components/layout/Footer.vue').default);
+
+Vue.component('bpam-login-form', require('./components/user/Login.vue').default);
 
 
 Vue.component('bpam-user-form', require('./components/user/UserForm.vue').default);

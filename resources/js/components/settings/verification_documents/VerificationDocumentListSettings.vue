@@ -2,10 +2,10 @@
     <div>
         <v-data-table
         :headers="headers"
-        :items="assessmentFees">
+        :items="verificationDocuments">
             <template v-slot:top>
                 <v-toolbar flat color="white">
-                    <v-toolbar-title>Assessment Fees Lists</v-toolbar-title>
+                    <v-toolbar-title>Verification Document Lists</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <div v-if="allowNewAction">
                         <div v-if="byDialog">
@@ -16,15 +16,15 @@
                                         dark
                                         class="mb-2"
                                         v-bind="attrs"
-                                        v-on="on">New Assessment Fee</v-btn>
+                                        v-on="on">New Verification Document</v-btn>
                                 </template>
                                 <v-card>
                                     <v-card-title>
-                                        <span class="headline">New Assessment</span>
+                                        <span class="headline">New Verification Document</span>
                                     </v-card-title>
                                     <v-card-text>
                                         <v-container>
-                                            <bpam-assessment-fee-settings-form></bpam-assessment-fee-settings-form>
+                                            <bpam-verification-document-settings-form></bpam-verification-document-settings-form>
                                         </v-container>
                                     </v-card-text>
                                     <v-card-actions>
@@ -40,15 +40,15 @@
                                 color="primary"
                                 dark
                                 class="mb-2"
-                                :to="'/settings/assessment/fee/new'"
+                                :to="'/settings/verification-document/new'"
                                 >New Assessment Fee</v-btn>
                         </div>
                     </div>
                 </v-toolbar>
             </template>
             <template v-slot:item.actions>
-                <div v-if="allowReadAction">
-                    <div
+                <span v-if="allowReadAction">
+                    <span
                         v-if="byDialog">
                         <v-dialog v-model="readDialog" max-width="600px" persistent>
                             <template v-slot:activator="{ on, attrs }">
@@ -61,11 +61,11 @@
                             </template>
                             <v-card>
                                 <v-card-title>
-                                    <span class="headline">Assessment Fee</span>
+                                    <span class="headline">Verification Document</span>
                                 </v-card-title>
                                 <v-card-text>
                                     <v-container>
-                                        <bpam-assessment-fee-settings-form readonly></bpam-assessment-fee-settings-form>
+                                        <bpam-verification-document-settings-form readonly></bpam-verification-document-settings-form>
                                     </v-container>
                                 </v-card-text>
                                 <v-card-actions>
@@ -74,6 +74,16 @@
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
+                    </span>
+                    <div v-else>
+                        <v-icon
+                            small
+                            class="mr-2"></v-icon>
+                    </div>
+                </span>
+
+                <span v-if="allowEditAction">
+                    <span v-if="byDialog">
                         <v-dialog v-model="editDialog" max-width="600px" persistent>
                             <template v-slot:activator="{ on, attrs }">
                                     <v-btn icon
@@ -85,11 +95,11 @@
                             </template>
                             <v-card>
                                 <v-card-title>
-                                    <span class="headline">Edit Assessment Fee</span>
+                                    <span class="headline">Edit Verification Document</span>
                                 </v-card-title>
                                 <v-card-text>
                                     <v-container>
-                                        <bpam-assessment-fee-settings-form></bpam-assessment-fee-settings-form>
+                                        <bpam-verification-document-settings-form></bpam-verification-document-settings-form>
                                     </v-container>
                                 </v-card-text>
                                 <v-card-actions>
@@ -99,6 +109,11 @@
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
+                    </span>
+                </span>
+
+                <span v-if="allowDeleteAction">
+                    <span v-if="byDialog">
                         <v-dialog v-model="deleteDialog" max-width="600px" persistent>
                             <template v-slot:activator="{ on, attrs }">
                                     <v-btn icon
@@ -115,7 +130,7 @@
                                 <v-card-text>
                                     <v-container>
                                         Are you sure you want to delete this item?
-                                        <bpam-assessment-fee-settings-form readonly></bpam-assessment-fee-settings-form>
+                                        <bpam-verification-document-settings-form readonly></bpam-verification-document-settings-form>
                                     </v-container>
                                 </v-card-text>
                                 <v-card-actions>
@@ -125,20 +140,15 @@
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
-                    </div>
-                    <div v-else>
-                        <v-icon
-                            small
-                            class="mr-2"></v-icon>
-                    </div>
-                </div>
+                    </span>
+                </span>
             </template>
         </v-data-table>
     </div>
 </template>
 
 <script>
-    import bpamAssessmentFeeSettingsForm from './AssessmentFeeSettingsForm';
+    import bpamVerificationDocumentSettingsForm from '../verification_documents/VerificationDocumentSettingsForm.vue';
     export default {
         data() {
             return {
@@ -169,10 +179,10 @@
                         value: "actions"
                     }
                 ],
-                assessmentFees: [
+                verificationDocuments: [
                     {
                         id: "1",
-                        name: "Assessment Fees",
+                        name: "Verification Documents",
                         type: "Type",
                         description: "Description",
                     }
@@ -206,7 +216,7 @@
             },
         },
         components: {
-            bpamAssessmentFeeSettingsForm
+            bpamVerificationDocumentSettingsForm
         }
     }
 </script>
