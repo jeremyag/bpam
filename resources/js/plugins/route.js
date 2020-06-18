@@ -78,6 +78,8 @@ const options = {
                     props: {
                         allowNewAction: true,
                         allowReadAction: true,
+                        allowEditAction: true,
+                        allowDeleteAction: true,
                         byDialog: true
                     }
                 },

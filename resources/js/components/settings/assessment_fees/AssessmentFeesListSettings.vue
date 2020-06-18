@@ -47,8 +47,8 @@
                 </v-toolbar>
             </template>
             <template v-slot:item.actions>
-                <div v-if="allowReadAction">
-                    <div
+                <span v-if="allowReadAction">
+                    <span
                         v-if="byDialog">
                         <v-dialog v-model="readDialog" max-width="600px" persistent>
                             <template v-slot:activator="{ on, attrs }">
@@ -74,6 +74,16 @@
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
+                    </span>
+                    <span v-else>
+                        <v-icon
+                            small
+                            class="mr-2"></v-icon>
+                    </span>
+                </span>
+                <span v-if="allowEditAction">
+                    <span
+                        v-if="byDialog">
                         <v-dialog v-model="editDialog" max-width="600px" persistent>
                             <template v-slot:activator="{ on, attrs }">
                                     <v-btn icon
@@ -99,6 +109,16 @@
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
+                    </span>
+                    <span v-else>
+                        <v-icon
+                            small
+                            class="mr-2"></v-icon>
+                    </span>
+                </span>
+                <span v-if="allowDeleteAction">
+                    <span
+                        v-if="byDialog">
                         <v-dialog v-model="deleteDialog" max-width="600px" persistent>
                             <template v-slot:activator="{ on, attrs }">
                                     <v-btn icon
@@ -125,13 +145,13 @@
                                 </v-card-actions>
                             </v-card>
                         </v-dialog>
-                    </div>
-                    <div v-else>
+                    </span>
+                    <span v-else>
                         <v-icon
                             small
                             class="mr-2"></v-icon>
-                    </div>
-                </div>
+                    </span>
+                </span>
             </template>
         </v-data-table>
     </div>
